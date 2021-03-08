@@ -1,0 +1,46 @@
+.menu-item{
+    flex: 1 1 auto;
+    height: 240px;
+    min-width: 28%;
+    margin: 10px ;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    color: rgba(0,0,0,0.8);
+    transition:all 0.5s ease;
+}
+
+[class ^= 'large']{
+    flex: 1 1 auto;
+    height: 400px;
+    min-width: 28%;
+    margin: 0px 10px 10px 10px ;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    color: rgba(0,0,0,0.8);
+    transition:all 0.5s ease;
+    
+}
+
+.item-name{
+    border: white solid 2px ;
+    background:rgba(255,255,255,0.5);
+}
+
+.menu-item:hover,[class ^= 'large']:hover{
+    transform: scale(1.007);
+    cursor: pointer;
+}
+.item-name:hover{
+    background:rgba(255,255,255,0.8); 
+}
+
