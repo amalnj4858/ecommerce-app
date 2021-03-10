@@ -1,0 +1,27 @@
+.itemComponent{
+    height:400px;
+    width:350px;
+    display:flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.bgimage{
+    height:95%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.info{
+    height:5%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.price{
+    margin-left: auto;
+}
+

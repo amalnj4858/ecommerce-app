@@ -1,8 +1,10 @@
 import React from 'react';
 import Menu from '../../Components/Menu/Menu.js';
-import './Homepage.css'
+import './Homepage.css';
+
 
 const Homepage = ()=>{
+   
     return(
         <div className = 'homepage'>
             <Menu />

@@ -51,7 +51,7 @@ class Menu extends React.Component{
             <div className="menu">
                 {
                     this.state.sections.map(section=>{
-                        return <Menuitem title = {section.title} imgUrl = {section.imageUrl} type = {section.size} />
+                        return <Menuitem title = {section.title} imgUrl = {section.imageUrl} type = {section.size} url = {section.linkUrl} />
                     })
                 }
             </div>
