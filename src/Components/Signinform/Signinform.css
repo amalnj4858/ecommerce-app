@@ -1,0 +1,25 @@
+.signform{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    border:gray solid 5px;
+    border-radius: 5px;
+    width: fit-content;
+}
+input{
+    margin:20px;
+}
+form{
+    display : flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+}
+
+button{
+    margin: 20px;
+}
+
+h2,h4{
+    margin-left: 12px;
+}

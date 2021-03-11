@@ -1,0 +1,12 @@
+input{
+    height: 25px;
+    border: none;
+    border-width: 0;
+    box-shadow: none;
+    border-bottom: 2px solid;
+}
+
+input:focus{
+    background:rgba(138, 205, 230,0.2);
+    outline: none;
+}
