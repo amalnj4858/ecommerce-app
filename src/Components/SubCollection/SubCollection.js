@@ -3,7 +3,7 @@ import Collectionitem from '../Collectionitem/Collectionitem.js'
 import './SubCollection.css'
 
 const Subcollection = ({items})=>{
-    console.log(items)
+    
     return(
       <div className = 'collectionSection'>
             {

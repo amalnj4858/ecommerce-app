@@ -2,6 +2,7 @@ import React from 'react';
 import './Signinform.css';
 import Forminput from '../Forminput/Forminput.js';
 import Submitbutton from '../Submitbutton/Submitbutton.js';
+import {signInWithGoogle} from '../../Firebase/Firebase.config.js';
 
 class Signinform extends React.Component{
     constructor(){
@@ -31,6 +32,7 @@ class Signinform extends React.Component{
                 <Forminput type = 'email'  value = {this.state.email} handleChange = {this.onValueChange} placeholder = 'Enter email' required = {false} />
                 <Forminput type = 'password'  value = {this.state.password} handleChange = {this.onValueChange} placeholder = 'Enter password' required = {false} />
                 <Submitbutton value = 'SIGN IN' type = 'submit' /> 
+                <Submitbutton value = 'GOOGLE' onClick = {signInWithGoogle}  />
             </form>
         </div>
         );

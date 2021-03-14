@@ -1,9 +1,9 @@
 import React from 'react';
 import './Submitbutton.css';
 
-const Submitbutton = ({value,type})=>{
+const Submitbutton = ({value,...otherProps})=>{
     return(
-    <button value = {value} type = {type} > {value} </button>
+    <button value = {value} {...otherProps}  > {value} </button>
     )
 }
 
