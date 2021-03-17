@@ -12,10 +12,14 @@ var firebaseConfig = {
     measurementId: "G-J2SHC09612"
   };
 
-firebase.initializeApp(firebaseConfig);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }else {
+    firebase.app(); 
+  }
 
 export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+const firestore = firebase.firestore();
 
 var provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({
@@ -23,17 +27,24 @@ provider.setCustomParameters({
   });
 export const signInWithGoogle = ()=> firebase.auth().signInWithPopup(provider);
 
-export const createUserIfNotExists = async (userAuth) =>{
+let name = null;
+
+export const createUserIfNotExists = async (userAuth,additionalData) =>{
   if(!userAuth){
     return;
   }
-  const docReference = firestore.doc(`users/${userAuth.uid}`);
+  
+  const docReference =  firestore.doc(`users/${userAuth.uid}`);
   const docSnapshot = await docReference.get();
   try{
+  let {displayName,email} =  userAuth;
+  if(!name)
+    name = additionalData;
+  if(!displayName)
+    displayName = name;
+  const dateJoined = new Date();
   if(!docSnapshot.exists){
-    const {displayName,email} = userAuth;
-    const dateJoined = new Date();
-    await docReference.set({displayName,email,dateJoined});
+    docReference.set({displayName,email,dateJoined}).then(()=>console.log('success'));
     }
   return docReference;
   }catch(error){
