@@ -3,10 +3,13 @@ import {ReactComponent as Logo} from '../../Assets/crown.svg';
 import {Link} from 'react-router-dom';
 import {auth} from '../../Firebase/Firebase.config.js';
 import {connect} from 'react-redux';
+import CartLogo from '../CartLogo/CartLogo.js';
+import CartDropDown from '../CartDropDown/CartDropDown.js';
 import './Header.css';
 
 
-const Header = ({currentUser})=>{
+
+const Header = ({currentUser,hidden})=>{
     return(
         <div className = 'header'>
             <Link to ='/' className ='logo' >
@@ -20,7 +23,11 @@ const Header = ({currentUser})=>{
                     :
                     (<Link to = '/signin' className = 'option'>SIGN IN</Link>)
                 }
-                <Link className = 'option'>CONTACT US</Link>
+                <Link className = 'option' >CONTACT US</Link>
+                <CartLogo />
+                {
+                    hidden ? null : <CartDropDown/>
+                }
             </div>
         </div>
     )
@@ -28,7 +35,8 @@ const Header = ({currentUser})=>{
 
 const matchStateToProps = (state) =>{
     return{
-        currentUser : state.user.currentUser
+        currentUser : state.user.currentUser,
+        hidden : state.cart.hidden
     }
 }
 

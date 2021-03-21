@@ -1,0 +1,20 @@
+.cartLogo{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.cartSvg{
+    height: 24px;
+    width: 24px;
+}
+
+.cartCount{
+    position: absolute;
+    font-weight: bolder;
+    bottom: 1px;
+}

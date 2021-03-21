@@ -19,6 +19,7 @@ class App extends React.Component {
 
   componentDidMount(){
     const {setCurrentUser} = this.props;
+    console.log(setCurrentUser);
     this.unsubscribeFromAuth =  auth.onAuthStateChanged(async (user)=> {
       if(user){
        try{
@@ -52,7 +53,7 @@ class App extends React.Component {
       <Switch>
           <Route exact path ="/" component = {Homepage} />
           <Route exact path ="/shop" component = {Shoppage} />
-          <Route path ="/signin"  render = {()=> this.props.currentUser? (<Redirect to='/'/>) : (<Signinpage />) } />
+          <Route exact path ="/signin"  render = {()=> this.props.currentUser? (<Redirect to='/'/>) : (<Signinpage />) } />
       </Switch>
     </div>
   );
