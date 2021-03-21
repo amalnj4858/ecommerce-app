@@ -1,7 +1,8 @@
 import React from 'react';
 import {ReactComponent as Logo} from '../../Assets/crown.svg';
 import {Link} from 'react-router-dom';
-import {auth} from '../../Firebase/Firebase.config.js'
+import {auth} from '../../Firebase/Firebase.config.js';
+import {connect} from 'react-redux';
 import './Header.css';
 
 
@@ -25,4 +26,10 @@ const Header = ({currentUser})=>{
     )
 }
 
-export default Header;
+const matchStateToProps = (state) =>{
+    return{
+        currentUser : state.user.currentUser
+    }
+}
+
+export default connect(matchStateToProps)(Header);
