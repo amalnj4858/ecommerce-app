@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route,Switch} from 'react-router-dom';
+import {Redirect, Route,Switch} from 'react-router-dom';
 import {auth,createUserIfNotExists} from './Firebase/Firebase.config.js';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './Redux/User/User-action';
@@ -52,7 +52,7 @@ class App extends React.Component {
       <Switch>
           <Route exact path ="/" component = {Homepage} />
           <Route exact path ="/shop" component = {Shoppage} />
-          <Route exact path ="/signin" component = {Signinpage}  />
+          <Route path ="/signin"  render = {()=> this.props.currentUser? (<Redirect to='/'/>) : (<Signinpage />) } />
       </Switch>
     </div>
   );
@@ -63,6 +63,8 @@ const matchDispatchToProps = dispatch =>({
     setCurrentUser: user => dispatch(setCurrentUser(user))
   })
   
+const matchStateToProps = (state) =>({
+  currentUser : state.user.currentUser
+})
 
-
-export default connect(null,matchDispatchToProps)(App);
+export default connect(matchStateToProps,matchDispatchToProps)(App);
