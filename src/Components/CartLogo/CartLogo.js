@@ -2,7 +2,7 @@ import React from 'react';
 import {ReactComponent as CartSvg} from '../../Assets/shopping-bag.svg';
 import './CartLogo.css';
 import {connect} from 'react-redux';
-import toggleDropDown from '../../Redux/Cart/Cart-action.js';
+import {toggleDropDown} from '../../Redux/Cart/Cart-action.js';
 
 const CartLogo = ({toggleDropDown})=>{
     return(

@@ -1,5 +1,8 @@
+import addToCart from './Cart-utils.js';
+
 const INITIAL_STATE = {
-    hidden : true
+    hidden : true,
+    items : []
 }
 
 const cartReducer = (state = INITIAL_STATE,action)=>{
@@ -7,7 +10,13 @@ const cartReducer = (state = INITIAL_STATE,action)=>{
         case 'TOGGLE_DROP_DOWN' : return{
             ...state,
             hidden : !state.hidden
+        };
+        
+        case 'ADD_ITEM' :return{ 
+            ...state,
+            items:addToCart(state,action.payload)
         }
+
         default :
         return state;
     }

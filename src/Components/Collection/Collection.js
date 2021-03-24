@@ -6,6 +6,7 @@ const Collection = ({allCollection})=>{
         <div>
             {
                 allCollection.map(section=>{
+                console.log(section)
                 return (
                     <div key = {section.id} >
                         <h1 style = {{margin : '15px' }} >{section.title}</h1>

@@ -1,0 +1,23 @@
+
+.cartItem{
+    display :flex;
+    flex-direction: column;
+}
+
+.image{
+    width: 75px;
+    height: 100px;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+}
+
+.title{
+    margin-right: auto;
+}
+
+.price{
+    margin-left: auto;
+}

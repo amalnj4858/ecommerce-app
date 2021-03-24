@@ -8,10 +8,10 @@ const Subcollection = ({items})=>{
       <div className = 'collectionSection'>
             {
                 items
-                .filter(item=>item.id<5)
+                .slice(0,4)
                 .map(item=>{
                   return (  
-                  <Collectionitem id = {item.id} title = {item.name} imgUrl = {item.imageUrl} price = {item.price}   />
+                  <Collectionitem   item = {item} />
                   )
                 })
             }
