@@ -5,6 +5,7 @@ import {auth} from '../../Firebase/Firebase.config.js';
 import {connect} from 'react-redux';
 import CartLogo from '../CartLogo/CartLogo.js';
 import CartDropDown from '../CartDropDown/CartDropDown.js';
+import {hiddenValueSelector} from '../../Redux/Cart/Cart-selectors.js';
 import './Header.css';
 
 
@@ -36,7 +37,7 @@ const Header = ({currentUser,hidden})=>{
 const matchStateToProps = (state) =>{
     return{
         currentUser : state.user.currentUser,
-        hidden : state.cart.hidden
+        hidden : hiddenValueSelector(state)
     }
 }
 

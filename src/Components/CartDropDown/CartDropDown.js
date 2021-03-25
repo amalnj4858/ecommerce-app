@@ -3,6 +3,7 @@ import './CartDropDown.css';
 import {connect} from 'react-redux';
 import Submitbutton from '../Submitbutton/Submitbutton.js';
 import CartDropDownItem from '../Cart-dropdown-item/Cart-dropdown-item.js';
+import {cartItemsSelector} from '../../Redux/Cart/Cart-selectors.js'
 const CartDropDown = ({items})=>{
     return(
         <div className='CartDropDown'>
@@ -19,7 +20,7 @@ const CartDropDown = ({items})=>{
 }
 
 const matchStateToProps =(state)=>({
-    items:state.cart.items
+    items:cartItemsSelector(state)
 })
 
 export default connect(matchStateToProps)(CartDropDown);
