@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import CartLogo from '../CartLogo/CartLogo.js';
 import CartDropDown from '../CartDropDown/CartDropDown.js';
 import {hiddenValueSelector} from '../../Redux/Cart/Cart-selectors.js';
+import {currentUserSelector} from '../../Redux/User/User-selector.js';
 import './Header.css';
 
 
@@ -36,7 +37,7 @@ const Header = ({currentUser,hidden})=>{
 
 const matchStateToProps = (state) =>{
     return{
-        currentUser : state.user.currentUser,
+        currentUser : currentUserSelector(state),
         hidden : hiddenValueSelector(state)
     }
 }

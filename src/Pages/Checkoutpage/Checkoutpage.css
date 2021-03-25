@@ -1,0 +1,46 @@
+.checkoutpage{
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    margin: 60px auto 30px auto;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.heading{
+    margin: 8px 100px 2px 100px ;
+    font-weight: bolder;
+}
+
+.heading:first-child{
+    margin-left: auto;
+}
+
+.heading:last-child{
+    margin-right: auto;
+}
+
+hr{
+    height: 3px;
+    width: 60%;
+    align-self: center;
+    background: gray;
+}
+
+h3{
+    margin-bottom: 1px;
+}
+
+.totalprice{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
