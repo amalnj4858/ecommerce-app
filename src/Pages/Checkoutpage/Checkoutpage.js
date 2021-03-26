@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {cartItemsSelector,totalPriceSelector} from '../../Redux/Cart/Cart-selectors.js';
+import CheckoutItem from '../../Components/checkout-item/checkout-item.js'
 import './Checkoutpage.css';
 
 const Checkoutpage = ({total,items})=>{
@@ -21,13 +22,24 @@ const Checkoutpage = ({total,items})=>{
                 <div className='heading'>
                     Quantity
                 </div>
+                <div className='heading'>
+                    Remove
+                </div>
             </div>
             <hr/>
             <div className='checkoutitems'>
-
+                {
+                    items.length ?
+                    items.map(item=>(
+                        <CheckoutItem {...item} />
+                    ))
+                    :
+                    <center><h3>CART IS EMPTY</h3></center>
+                }
             </div>
+            <hr/>
             <div className='totalprice'>
-                <h3>TOTAL</h3>
+                <h3 className='total'>TOTAL</h3>
                 <h2>${total}</h2>
             </div>
         </div>

@@ -1,0 +1,23 @@
+.checkoutItem{
+    display: flex;
+    flex-direction: row;
+}
+
+.checkoutimg{
+    height: 200px;
+    width: 150px;
+    margin-left: 170px;
+}
+
+.checkoutname,.checkoutprice,.checkoutquantity,.checkoutremove{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin:auto;
+    font-weight: bolder;
+}
+
+.checkoutremove{
+    cursor: pointer;
+}
+

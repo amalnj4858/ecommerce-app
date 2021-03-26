@@ -5,8 +5,9 @@ import Submitbutton from '../Submitbutton/Submitbutton.js';
 import CartDropDownItem from '../Cart-dropdown-item/Cart-dropdown-item.js';
 import {cartItemsSelector} from '../../Redux/Cart/Cart-selectors.js';
 import {withRouter} from 'react-router';
+import {toggleDropDown} from '../../Redux/Cart/Cart-action.js';
 
-const CartDropDown = ({items,history})=>{
+const CartDropDown = ({items,history,dispatch})=>{  //dispacth is passed in as a prop if no second parameted is given along with mapstatetoprops
     return(
         <div className='CartDropDown'>
             <div className='CartItems'>
@@ -16,7 +17,11 @@ const CartDropDown = ({items,history})=>{
                     })
                 }
             </div>
-            <Submitbutton value='CHECKOUT' className = 'SubmitButton' onClick = {()=>history.push('/checkout')} />
+            <Submitbutton value='CHECKOUT' className = 'SubmitButton' 
+            onClick = {()=>{
+                history.push('/checkout');
+                dispatch(toggleDropDown());
+                }} />
         </div>
     )
 }
