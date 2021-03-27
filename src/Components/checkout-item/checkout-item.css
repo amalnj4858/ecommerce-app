@@ -1,6 +1,7 @@
 .checkoutItem{
     display: flex;
     flex-direction: row;
+    font-size: larger;
 }
 
 .checkoutimg{
@@ -21,3 +22,13 @@
     cursor: pointer;
 }
 
+.increaseCount,.decreaseCount{
+    cursor: pointer;
+    font-weight: bolder;
+    margin: auto 10px auto 10px;
+    font-size: large;
+}
+
+.checkoutquantity{
+    font-size: x-large;
+}

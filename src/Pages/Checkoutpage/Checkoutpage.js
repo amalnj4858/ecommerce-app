@@ -5,7 +5,6 @@ import CheckoutItem from '../../Components/checkout-item/checkout-item.js'
 import './Checkoutpage.css';
 
 const Checkoutpage = ({total,items})=>{
-    console.log(items)
     return(
         <div className='checkoutpage'>
             <h1>CHECKOUT</h1>
