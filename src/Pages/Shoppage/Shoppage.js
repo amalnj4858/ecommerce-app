@@ -1,22 +1,21 @@
 import React from 'react';
-import SHOP_DATA from './Shopdata.js';
-import Collection from '../../Components/Collection/Collection.js'
+import ShopPreview from '../../Components/Shop-preview/Shop-preview.js';
+import {Route} from 'react-router-dom';
+import ShopCategory from '../../Components/ShopCategory/ShopCategory.js';
 
-class Shoppage extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            totalCollection : SHOP_DATA
-        }
-    }
 
-    render(){
-        return(
-            <div>
-                <Collection allCollection = {this.state.totalCollection} />
-            </div>
-        )
-    }
-
+const Shoppage = ({match})=>{
+  
+    return (
+        <div className='shoppage'>
+           <Route exact path = {`${match.path}`} component = {ShopPreview} />
+           <Route  path = {`${match.path}/:categoryName`} component = {ShopCategory} />
+        </div>
+    )
 }
+
+
 export default Shoppage;
+
+
+

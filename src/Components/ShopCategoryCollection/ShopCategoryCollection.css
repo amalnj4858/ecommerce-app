@@ -1,0 +1,7 @@
+.collectionSection{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin : 10px;
+    flex-wrap: wrap;
+}

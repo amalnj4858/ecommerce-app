@@ -1,0 +1,9 @@
+
+.category{
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryName{
+   justify-self: center;
+}
