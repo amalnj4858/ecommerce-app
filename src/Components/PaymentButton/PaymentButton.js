@@ -15,7 +15,6 @@ const PaymentButton = ({price}) =>{
         <StripeCheckout 
             name = 'CROWN CLOTHING'
             description = 'Payment'
-            image = 'https://sendeyo.com/en/f3eb2117da'
             shippingAddress
             billingAddress
             amount = {priceForStripe}
