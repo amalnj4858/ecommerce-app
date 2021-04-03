@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {cartItemsSelector,totalPriceSelector} from '../../Redux/Cart/Cart-selectors.js';
-import CheckoutItem from '../../Components/checkout-item/checkout-item.js'
+import CheckoutItem from '../../Components/checkout-item/checkout-item.js';
+import PaymentButton from '../../Components/PaymentButton/PaymentButton.js';
 import './Checkoutpage.css';
 
 const Checkoutpage = ({total,items})=>{
@@ -41,6 +42,7 @@ const Checkoutpage = ({total,items})=>{
                 <h3 className='total'>TOTAL</h3>
                 <h2>${total}</h2>
             </div>
+            <PaymentButton price = {total} />
         </div>
     )
 }
